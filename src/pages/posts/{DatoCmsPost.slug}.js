@@ -1,4 +1,5 @@
 import React from "react";
+import { graphql } from "gatsby";
 import Container from "../../components/container";
 import Header from "../../components/header";
 import MoreStories from "../../components/more-stories";
@@ -47,7 +48,10 @@ export const query = graphql`
           ... on DatoCmsImageBlock {
             id: originalId
             image {
-              fluid(imgixParams: { fm: "jpg" }, sizes: "(max-width: 700) 100vw, 700px") {
+              fluid(
+                imgixParams: { fm: "jpg" }
+                sizes: "(max-width: 700) 100vw, 700px"
+              ) {
                 ...GatsbyDatoCmsFluid
               }
             }
@@ -56,7 +60,10 @@ export const query = graphql`
       }
       date
       coverImage {
-        fluid(imgixParams: { fm: "jpg" }, sizes: "(max-width: 1500px) 100vw, 1500px") {
+        fluid(
+          imgixParams: { fm: "jpg" }
+          sizes: "(max-width: 1500px) 100vw, 1500px"
+        ) {
           ...GatsbyDatoCmsFluid
         }
       }
