@@ -7,5 +7,5 @@
   "buildCommand": "npm run build",
   "buildDirectory": "public",
   "datocmsApiTokenEnvName": "DATO_API_TOKEN",
-  "livePreviewUrl": "https://nextjs-demo-bay.vercel.app/"
+  "livePreviewUrl": "https://datocms-gatsby-blog-demo.netlify.app"
 }
