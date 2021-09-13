@@ -45,38 +45,25 @@ export const query = graphql`
         value
         blocks {
           __typename
-          ... on DatoCmsImageBlock {
-            id: originalId
-            image {
-              fluid(
-                imgixParams: { fm: "jpg" }
-                sizes: "(max-width: 700) 100vw, 700px"
-              ) {
-                ...GatsbyDatoCmsFluid
-              }
-            }
+          id: originalId
+          image {
+            gatsbyImageData(width: 700)
           }
         }
       }
       date
       coverImage {
-        fluid(
-          imgixParams: { fm: "jpg" }
-          sizes: "(max-width: 1500px) 100vw, 1500px"
-        ) {
-          ...GatsbyDatoCmsFluid
-        }
+        gatsbyImageData(width: 1500)
       }
       author {
         name
         picture {
-          fixed(
+          gatsbyImageData(
+            layout: FIXED
             width: 48
             height: 48
-            imgixParams: { fm: "jpg", fit: "crop", sat: -100 }
-          ) {
-            ...GatsbyDatoCmsFixed
-          }
+            imgixParams: { sat: -100 }
+          )
         }
       }
     }
@@ -91,23 +78,17 @@ export const query = graphql`
         excerpt
         date
         coverImage {
-          small: fluid(
-            imgixParams: { fm: "jpg" }
-            sizes: "(max-width: 760px) 100vw, (max-width: 1500px) 50vw, 700px"
-          ) {
-            ...GatsbyDatoCmsFluid
-          }
+          small: gatsbyImageData(width: 760)
         }
         author {
           name
           picture {
-            fixed(
+            gatsbyImageData(
+              layout: FIXED
               width: 48
               height: 48
-              imgixParams: { fm: "jpg", fit: "crop", sat: -100 }
-            ) {
-              ...GatsbyDatoCmsFixed
-            }
+              imgixParams: { sat: -100 }
+            )
           }
         }
       }
