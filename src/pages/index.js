@@ -48,23 +48,18 @@ export const query = graphql`
         excerpt
         date
         coverImage {
-          large: fluid(imgixParams: { fm: "jpg" }, sizes: "(max-width: 1500px) 100vw, 1500px") {
-            ...GatsbyDatoCmsFluid
-          }
-          small: fluid(imgixParams: { fm: "jpg" }, sizes: "(max-width: 760px) 100vw, (max-width: 1500px) 50vw, 700px") {
-            ...GatsbyDatoCmsFluid
-          }
+          large: gatsbyImageData(width: 1500)
+          small: gatsbyImageData(width: 760)
         }
         author {
           name
           picture {
-            fixed(
+            gatsbyImageData(
+              layout: FIXED
               width: 48
               height: 48
-              imgixParams: { fm: "jpg", fit: "crop", sat: -100 }
-            ) {
-              ...GatsbyDatoCmsFixed
-            }
+              imgixParams: { sat: -100 }
+            )
           }
         }
       }
