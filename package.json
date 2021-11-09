@@ -24,7 +24,7 @@
     "gatsby-plugin-postcss": "^5.0.0",
     "gatsby-plugin-react-helmet": "^5.0.0",
     "gatsby-plugin-sharp": "^4.0.0",
-    "gatsby-source-datocms": "^3.0.5",
+    "gatsby-source-datocms": "^3.0.10",
     "gatsby-transformer-sharp": "^4.0.0",
     "postcss": "^8.3.6",
     "react": "^17.0.2",
